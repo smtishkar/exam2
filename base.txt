@@ -1,2 +1,3 @@
-Dog;1;02.02.2010;[qqq, www]
-Dog;2;02.02.2010;[zzz, ddd]
+Dog,1,11.11.1111,qqq,www,eee,uuuu
+Dog,2,11.11.1111,aaa,ssss,ddd,jjjjj
+Dog,3,11.11.1111,zzz,xxx,ccc
