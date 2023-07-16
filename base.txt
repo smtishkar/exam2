@@ -1,2 +1,3 @@
 Dog,Andrey,11.11.2020,Stand,Sing
 Camel,Jack,02.02.2020,Run
+Horse,Bob,22.12.2019,Sit,Stand
