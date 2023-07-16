@@ -1,4 +1,8 @@
+-- 7. В подключенном MySQL репозитории создать базу данных “Друзья человека”
 USE humanFriends;
+
+-- 8. Создать таблицы с иерархией из диаграммы в БД
+
 
 CREATE TABLE cat (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -63,6 +67,9 @@ Command VARCHAR (50) NOT NULL,
 Birthday DATE NOT NULL
 );
 
+/* 9. Заполнить низкоуровневые таблицы именами(животных), командами 
+которые они выполняют и датами рождения
+*/
 
 INSERT INTO cat (Name, Command, Birthday) VALUES
 ('Лили', 'Спасть', '2010-04-03'),
@@ -117,6 +124,9 @@ INSERT INTO donkey (Name, Command, Birthday) VALUES
 ('Иа', 'Сидеть', '2019-02-03');
 
 SELECT * FROM donkey;
+/* 10. Удалив из таблицы верблюдов, т.к. верблюдов решили перевезти в другой
+питомник на зимовку. Объединить таблицы лошади, и ослы в одну таблицу.
+*/
 
 DELETE FROM camel
 WHERE id > 0;
@@ -133,6 +143,11 @@ SELECT  Name,
 FROM donkey;
 
 SELECT * FROM donkeyAndHorse;
+
+/*11.Создать новую таблицу “молодые животные” в которую попадут все
+животные старше 1 года, но младше 3 лет и в отдельном столбце с точностью
+до месяца подсчитать возраст животных в новой таблице
+*/
 
 CREATE TABLE youngAnimalsDraft (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY)
 SELECT Name,
@@ -161,6 +176,10 @@ select Name,
  where Round((year(current_date()) - year(Birthday)) + (month(current_date() - month(Birthday)))/10, 2) > 1 
  and Round((year(current_date()) - year(Birthday)) + (month(current_date() - month(Birthday)))/10, 2) < 3;
 select * from youngAnimals;    
+
+/*12. Объединить все таблицы в одну, при этом сохраняя поля, указывающие на
+прошлую принадлежность к старым таблицам
+*/
 
 create table newhumanFriend (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY)
 select  Name, 
